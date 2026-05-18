@@ -1,77 +1,232 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ottilie Williams</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ottilie Williams — Engineering with intent.</title>
+  <meta name="description" content="Full-stack software engineer specialising in Ruby on Rails, TypeScript &amp; React — building data-intensive, audit-grade platforms in emissions and fintech.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
 
-    <nav class="navbar navbar-expand-md navbar-dark justify-content-center">
-      <a class="navbar-brand" href="index.html">
-	<img class="logo" src="images/logo.png" alt="Logo of large O with Ottilie in a semi-circle above">
-      </a>
-
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-	<span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="navbar-collapse collapse" id="collapsingNavbar">
-	<ul class="navbar-nav">
-	  <li class="nav-item active">
-	    <a class="nav-link" href="about.html">About</a>
-	  </li>
-
-	  <li class="nav-item active">
-	    <a class="nav-link" href="portfolio.html">Portfolio</a>
-	  </li>
-	</ul>
-	<ul class="navbar-nav ml-auto">
-	  <li class="nav-item active">
-	    <a class="nav-link" href="mailto:ottiliewilliams@gmail.com"><i class="fa fa-envelope"></i></a>
-	  </li>
-
-	  <li class="nav-item active">
-	    <a class="nav-link" href="https://github.com/OttilieWilliams"><i class="fa fa-github"></i></a>
-	  </li>
-
-	  <li class="nav-item active">
-	    <a class="nav-link" href="https://twitter.com/Ottilie_Wills"><i class="fa fa-twitter"></i></a>
-	  </li>
-	</ul>
+    <!-- top bar -->
+    <header class="topbar">
+      <div class="mark">
+        <span class="blob" aria-hidden="true"></span>
+        <span>Ottilie <span class="it">Williams</span></span>
       </div>
-    </nav>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact"></a>
+      </nav>
+    </header>
 
-    <div class="hero-images">
-      <div class="hero-image-container hero-image-widescreen">
-	<img class="hero-image" src="images/pic_1.jpeg" alt="">
+    <!-- hero block -->
+    <section class="hero">
+      <div class="shape-1" aria-hidden="true"></div>
+      <div class="shape-2" aria-hidden="true"></div>
+
+      <div class="row-top">
+        <span>● Full-stack engineer</span>
+        <div class="right"><span>Newcastle, NSW</span></div>
       </div>
 
-      <div class="hero-image-container">
-	<img class="hero-image" src="images/pic_2.jpeg" alt="">
+      <h1>Engineering<br><span class="it tan">with intent.</span><svg class="squiggle" viewBox="0 0 200 30" fill="none" aria-hidden="true"><path d="M2 18 Q 25 2, 50 18 T 100 18 T 150 18 T 198 18" stroke="#2351c9" stroke-width="4" stroke-linecap="round"/></svg></h1>
+
+      <div class="below">
+        <p class="lede">Full-stack software engineer specialising in <em>Ruby on Rails, TypeScript &amp; React</em> — building <span class="hl">data-intensive, audit-grade</span> platforms in emissions and fintech.</p>
+
+        <div class="meta-card">
+          <div><span class="k">— Stack</span><span class="v">Rails · TS · React</span></div>
+          <div><span class="k">— Coding</span><span class="v tan">Since 2018</span></div>
+          <div><span class="k">— Based</span><span class="v">Newcastle, NSW</span></div>
+          <div><span class="k">— Status</span><span class="v">Open to roles</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- photo band -->
+    <section class="photo-band">
+      <div class="photo-card">
+        <img src="images/pic_1.jpeg" alt="">
+        <span class="corner">01</span>
+        <span class="tag">Decide</span>
+      </div>
+      <div class="photo-card">
+        <img src="images/pic_2.jpeg" alt="">
+        <span class="corner">02</span>
+        <span class="tag">Commit</span>
+      </div>
+      <div class="photo-card">
+        <img src="images/pic_3.jpeg" alt="">
+        <span class="corner">03</span>
+        <span class="tag">Ship</span>
+      </div>
+    </section>
+
+    <!-- skills -->
+    <section class="section" id="skills">
+      <div class="sec-head">
+        <div class="num">01</div>
+        <h2>What I <span class="it tan">work with.</span></h2>
+        <span class="arrow">↘</span>
       </div>
 
-      <div class="hero-image-container hero-image-widescreen">
-	<img class="hero-image" src="images/pic_3.jpeg" alt="">
+      <div class="skills-wrap">
+        <div class="skill-row">
+          <span class="skill-label c1">— Languages</span>
+          <div class="skill-pills">
+            <span class="pill">Ruby</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Rust</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label c2">— Backend</span>
+          <div class="skill-pills">
+            <span class="pill">Ruby <span class="it">on</span> Rails</span>
+            <span class="pill">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label c3">— Frontend</span>
+          <div class="skill-pills">
+            <span class="pill">React</span>
+            <span class="pill">RTK Query</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">Storybook</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label c4">— Testing</span>
+          <div class="skill-pills">
+            <span class="pill">Cypress</span>
+            <span class="pill">RSpec</span>
+            <span class="pill">Rust testing</span>
+            <span class="pill">Snapshot testing</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label c5">— Data &amp; Cloud</span>
+          <div class="skill-pills">
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Docker</span>
+            <span class="pill">AWS</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label c6">— Tools</span>
+          <div class="skill-pills">
+            <span class="pill">Git</span>
+            <span class="pill">Buildkite</span>
+            <span class="pill">Trello</span>
+            <span class="pill">Notion</span>
+            <span class="pill">Claude Code</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <!--hero-images-->
+    </section>
 
-    <div class="hero-content">
-      <h1 class="hero-title">
-	Full Stack Web Developer
-      </h1>
+    <!-- work -->
+    <section class="section" id="work">
+      <div class="sec-head">
+        <div class="num">02</div>
+        <h2>Where I've <span class="it cob">built things.</span></h2>
+        <span class="arrow">↘</span>
+      </div>
 
-      <h2 class="hero-subtitle">
-	Creative, technical, team player
-      </h2>
-    </div>
-    <!--hero-content-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+      <div class="exp-grid">
+
+        <a class="exp-card c1" href="#">
+          <div class="when">Feb 2023 —<br>Feb 2026</div>
+          <div>
+            <div class="title">Kinesis<span class="role">Full-Stack Software Engineer</span></div>
+          </div>
+          <div>
+            <div class="summary">Shipped React &amp; TypeScript features on a platform for tracking large-scale emissions data. Improved data quality in a Rust pipeline with validation and cross-checks, and rolled out reusable frontend patterns across the product.</div>
+            <div class="stack-line">React · TypeScript · Rust · Cypress · Buildkite</div>
+          </div>
+        </a>
+
+        <a class="exp-card c2" href="#">
+          <div class="when">Aug 2021 —<br>Nov 2022</div>
+          <div>
+            <div class="title">360 Insights<span class="role">Full-Stack Rails Developer</span></div>
+          </div>
+          <div>
+            <div class="summary">Built features on an enterprise employee-incentive SaaS. Designed APIs, refactored Sidekiq jobs, and resolved N+1s to cut page-load times by ~50%.</div>
+            <div class="stack-line">Rails · Postgres · Sidekiq · RSpec · AWS</div>
+          </div>
+        </a>
+
+        <a class="exp-card c3" href="#">
+          <div class="when">Mar 2019 —<br>Jul 2021</div>
+          <div>
+            <div class="title">BT Group<span class="role">Full-Stack Rails Developer</span></div>
+          </div>
+          <div>
+            <div class="summary">Internal inventory and workflow application for network engineers. Practised TDD with RSpec &amp; Cucumber in a large multi-team environment; led Brown Bag knowledge-sharing sessions.</div>
+            <div class="stack-line">Rails · Postgres · JavaScript · RSpec · Cucumber</div>
+          </div>
+        </a>
+
+        <a class="exp-card c4" href="#">
+          <div class="when">Nov 2018 —<br>Feb 2019</div>
+          <div>
+            <div class="title">BT FurtHER<span class="role">Trainee · Digital Intensive</span></div>
+          </div>
+          <div>
+            <div class="summary">Training programme in Python, APIs and test-driven development. Built and deployed a small application in a collaborative environment.</div>
+            <div class="stack-line">Python · APIs · TDD</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- now / currently building -->
+    <section class="now-block" id="now">
+      <div class="shape" aria-hidden="true"></div>
+      <div>
+        <div class="label"><span class="dot"></span>Personal Projects</div>
+        <h2>Pommie<em>Super</em> — a cross-border calculator for <em>UK nationals</em> in Australia.</h2>
+      </div>
+      <p>Modelling superannuation contribution scenarios and tax-treaty implications with Rails, React and TypeScript. A focus on clarity of the financial modelling.</p>
+    </section>
+
+    <!-- contact -->
+    <section class="contact-strip" id="contact">
+      <div class="splash" aria-hidden="true"></div>
+      <h2>Get in <br><em>contact</em></h2>
+      <div class="reach">
+        <a href="mailto:ottiliewilliams@gmail.com">
+          <span>Email ↗</span>
+          <span class="v">ottiliewilliams@gmail.com</span>
+        </a>
+        <a href="https://github.com/OttilieWilliams">
+          <span>GitHub ↗</span>
+          <span class="v">/OttilieWilliams</span>
+        </a>
+        <a href="https://linkedin.com/in/OttilieWilliams">
+          <span>LinkedIn ↗</span>
+          <span class="v">/OttilieWilliams</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© Ottilie Williams</span>
+      <span>Newcastle, NSW</span>
+    </footer>
+
+  </div>
+</body>
 </html>
