@@ -336,12 +336,12 @@ body::before {
   color: var(--cream);
   white-space: nowrap;
 }
-.skill-label.c1 { background: var(--tangerine); }
+.skill-label.c1 { background: var(--tangerine); color: var(--ink); }
 .skill-label.c2 { background: var(--cobalt); }
 .skill-label.c3 { background: var(--teal); }
 .skill-label.c4 { background: var(--rose); }
 .skill-label.c5 { background: var(--butter); color: var(--ink); }
-.skill-label.c6 { background: var(--moss); }
+.skill-label.c6 { background: var(--moss); color: var(--ink); }
 
 .skill-pills {
   display: flex; flex-wrap: wrap; gap: 8px 10px;
@@ -381,8 +381,8 @@ body::before {
 @media (max-width: 800px) {
   .exp-card { grid-template-columns: 1fr; gap: 12px; padding: 28px; border-radius: 22px; }
 }
-.exp-card.c1 { background: var(--tangerine); color: var(--cream); }
-.exp-card.c1 .when, .exp-card.c1 .stack-line { color: var(--cream); }
+.exp-card.c1 { background: var(--tangerine); color: var(--ink); }
+.exp-card.c1 .when, .exp-card.c1 .stack-line { color: var(--ink); }
 .exp-card.c2 { background: var(--cobalt); color: var(--cream); }
 .exp-card.c2 .when, .exp-card.c2 .stack-line { color: var(--cream); }
 .exp-card.c3 { background: var(--butter); }
@@ -406,7 +406,6 @@ body::before {
   letter-spacing: 0; line-height: 1.4;
   color: var(--ink);
 }
-.exp-card.c1 .title .role,
 .exp-card.c2 .title .role,
 .exp-card.c4 .title .role { color: var(--cream); }
 .exp-card .summary {
