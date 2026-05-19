@@ -160,7 +160,7 @@ body::before {
   font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.06em;
 }
-.hero .meta-card .k { color: rgba(245,236,214,0.45); display: block; margin-bottom: 4px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
+.hero .meta-card .k { color: rgba(245,236,214,0.8); display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
 .hero .meta-card .v { font-family: var(--sans); font-size: 14px; letter-spacing: 0; color: var(--cream); font-weight: 500; text-transform: none; }
 .hero .meta-card .v.tan { color: var(--tangerine-2); }
 
@@ -210,7 +210,7 @@ body::before {
   position: absolute; bottom: 14px; left: 14px;
   background: var(--cream); color: var(--ink);
   padding: 6px 12px; border-radius: 999px;
-  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
 }
 .photo-card .corner {
@@ -283,7 +283,7 @@ body::before {
 }
 .about .sidekick h3 {
   margin: 0 0 16px;
-  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.18em;
   color: rgba(245,236,214,0.6);
 }
@@ -293,7 +293,7 @@ body::before {
   font-size: 15px;
 }
 .about .sidekick li .pre {
-  font-family: var(--mono); font-size: 10px;
+  font-family: var(--mono); font-size: 11px;
   color: rgba(245,236,214,0.55);
   letter-spacing: 0.1em; text-transform: uppercase;
   flex-shrink: 0; width: 60px;
@@ -331,17 +331,17 @@ body::before {
   justify-self: start;
   padding: 8px 16px;
   border-radius: 999px;
-  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
   letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--cream);
   white-space: nowrap;
 }
-.skill-label.c1 { background: var(--tangerine); color: var(--ink); }
+.skill-label.c1 { background: var(--tangerine); }
 .skill-label.c2 { background: var(--cobalt); }
 .skill-label.c3 { background: var(--teal); }
-.skill-label.c4 { background: var(--rose); color: var(--ink); }
+.skill-label.c4 { background: var(--rose); }
 .skill-label.c5 { background: var(--butter); color: var(--ink); }
-.skill-label.c6 { background: var(--moss); color: var(--ink); }
+.skill-label.c6 { background: var(--moss); }
 
 .skill-pills {
   display: flex; flex-wrap: wrap; gap: 8px 10px;
@@ -406,6 +406,7 @@ body::before {
   letter-spacing: 0; line-height: 1.4;
   color: var(--ink);
 }
+.exp-card.c1 .title .role,
 .exp-card.c2 .title .role,
 .exp-card.c4 .title .role { color: var(--cream); }
 .exp-card .summary {
@@ -413,7 +414,7 @@ body::before {
   font-weight: 400;
 }
 .exp-card .stack-line {
-  font-family: var(--mono); font-size: 10px;
+  font-family: var(--mono); font-size: 12px;
   text-transform: uppercase; letter-spacing: 0.1em;
   margin-top: 10px;
   color: var(--ink-mid);
