@@ -1,0 +1,7 @@
+{
+  "startCommand": "npx serve . -l 3000",
+  "port": 3000,
+  "paths": ["/"],
+  "wcag": "AA",
+  "mode": "all"
+}
