@@ -16,6 +16,15 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: React to command
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+        run: |
+          gh api "repos/$REPO/issues/comments/$COMMENT_ID/reactions" \
+            -X POST -f content=eyes
+
       - name: Check write access
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
