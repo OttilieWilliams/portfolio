@@ -102,6 +102,14 @@ jobs:
           CATEGORY: ${{ steps.cmd.outputs.category }}
         run: npx a11y-agent fix --category="$CATEGORY"
 
+      - name: Re-run audit
+        if: steps.cmd.outputs.action == 'fix'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npx a11y-agent audit
+
       - name: Revert last a11y-agent commit
         if: steps.cmd.outputs.action == 'revert'
         env:
