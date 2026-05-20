@@ -217,6 +217,10 @@ body::before {
   font-family: var(--display); font-style: italic;
   font-size: 26px; color: var(--ink); line-height: 1;
 }
+/* Fix contrast: .corner on cobalt (#2351c9) background needs light text */
+.photo-card:nth-child(2) .corner {
+  color: var(--cream);
+}
 
 /* ────────── section heading ────────── */
 .section { padding: 90px 0 40px; position: relative; }
@@ -379,9 +383,9 @@ body::before {
 @media (max-width: 800px) {
   .exp-card { grid-template-columns: 1fr; gap: 12px; padding: 28px; border-radius: 22px; }
 }
-.exp-card.c1 { background: var(--tangerine); color: var(--ink); }
-.exp-card.c1 .when, .exp-card.c1 .stack-line { color: var(--ink); }
-.exp-card.c1 .title .role { opacity: 1; color: var(--ink-soft); }
+.exp-card.c1 { background: var(--tangerine); color: var(--cream); }
+.exp-card.c1 .when, .exp-card.c1 .stack-line { color: var(--cream); }
+.exp-card.c1 .title .role { opacity: 1; color: var(--cream); }
 .exp-card.c2 { background: var(--cobalt); color: var(--cream); }
 .exp-card.c2 .when, .exp-card.c2 .stack-line { color: var(--cream); }
 .exp-card.c2 .title .role { opacity: 1; color: #e8eaf6; }
