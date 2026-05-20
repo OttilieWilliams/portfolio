@@ -1,0 +1,7 @@
+{
+  "startCommand": "npm run dev",
+  "port": 3000,
+  "paths": ["/", "/about", "/contact"],
+  "wcag": "AA",
+  "mode": "all"
+}

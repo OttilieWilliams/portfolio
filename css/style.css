@@ -8,10 +8,12 @@
 
   --tangerine: #ef6a2c;
   --tangerine-2: #f5894c;
+  --tangerine-accessible: #c44e0c;
   --cobalt: #2351c9;
   --teal: #0f5c5a;
   --butter: #f3cf4e;
   --rose: #d96676;
+  --rose-accessible: #8c1f30;
   --moss: #6b8b3f;
 
   --display: "Instrument Serif", Georgia, serif;
@@ -127,7 +129,8 @@ body::before {
   color: var(--ink);
 }
 .hero h1 .it { font-style: italic; }
-.hero h1 .tan { color: var(--tangerine); }
+/* Accessible tangerine for large text on --paper (#fbf6e8): ratio ≥ 3:1 */
+.hero h1 .tan { color: var(--tangerine-accessible); }
 .hero h1 .squiggle {
   display: inline-block; vertical-align: middle;
   width: clamp(80px, 12vw, 180px); height: 0.4em;
@@ -159,7 +162,8 @@ body::before {
   font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.06em;
 }
-.hero .meta-card .k { color: rgba(245,236,214,0.45); display: block; margin-bottom: 4px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
+/* Increased opacity from 0.45 to 0.65 so #786d59-equivalent on #161412 exceeds 4.5:1 */
+.hero .meta-card .k { color: rgba(245,236,214,0.65); display: block; margin-bottom: 4px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
 .hero .meta-card .v { font-family: var(--sans); font-size: 14px; letter-spacing: 0; color: var(--cream); font-weight: 500; text-transform: none; }
 .hero .meta-card .v.tan { color: var(--tangerine-2); }
 
@@ -215,7 +219,7 @@ body::before {
 .photo-card .corner {
   position: absolute; top: 14px; right: 14px;
   font-family: var(--display); font-style: italic;
-  font-size: 26px; color: var(--cream); line-height: 1;
+  font-size: 26px; color: var(--ink); line-height: 1;
 }
 
 /* ────────── section heading ────────── */
@@ -240,7 +244,8 @@ body::before {
   letter-spacing: -0.02em;
 }
 .sec-head h2 .it { font-style: italic; }
-.sec-head h2 .tan { color: var(--tangerine); }
+/* Accessible tangerine for large text on --cream (#f5ecd6): ratio ≥ 3:1 */
+.sec-head h2 .tan { color: var(--tangerine-accessible); }
 .sec-head h2 .cob { color: var(--cobalt); }
 .sec-head .arrow {
   font-family: var(--display); font-style: italic;
@@ -379,8 +384,10 @@ body::before {
 @media (max-width: 800px) {
   .exp-card { grid-template-columns: 1fr; gap: 12px; padding: 28px; border-radius: 22px; }
 }
-.exp-card.c1 { background: var(--tangerine); color: var(--cream); }
-.exp-card.c1 .when, .exp-card.c1 .stack-line { color: var(--cream); }
+/* c1 card: use dark ink text for sufficient contrast on tangerine background */
+.exp-card.c1 { background: var(--tangerine); color: var(--ink); }
+.exp-card.c1 .when { color: var(--ink); }
+.exp-card.c1 .stack-line { color: var(--ink); }
 .exp-card.c2 { background: var(--cobalt); color: var(--cream); }
 .exp-card.c2 .when, .exp-card.c2 .stack-line { color: var(--cream); }
 .exp-card.c3 { background: var(--butter); }
@@ -402,8 +409,20 @@ body::before {
   display: block; margin-top: 8px;
   font-family: var(--sans); font-size: 13px; font-weight: 500;
   letter-spacing: 0; line-height: 1.4;
-  opacity: 0.75;
+  /* Removed opacity to ensure sufficient contrast on all card backgrounds */
 }
+/* Restore subtle role styling via explicit colors where background is light */
+.exp-card.c3 .title .role { color: var(--ink-soft); }
+
+/* c2 role: full cream (no opacity reduction) for sufficient contrast on cobalt */
+.exp-card.c2 .title .role { color: var(--cream); }
+/* c4 role: full cream (no opacity reduction) for sufficient contrast on teal */
+.exp-card.c4 .title .role { color: var(--cream); }
+
+/* c3 .when and .stack-line: use dark ink-soft for contrast on butter (#f3cf4e) */
+.exp-card.c3 .when { color: var(--ink-soft); }
+.exp-card.c3 .stack-line { color: var(--ink-soft); }
+
 .exp-card .summary {
   font-size: 15px; line-height: 1.55;
   font-weight: 400;
@@ -464,7 +483,7 @@ body::before {
 /* ────────── contact strip ────────── */
 .contact-strip {
   margin-top: 22px;
-  background: var(--rose);
+  background: var(--rose-accessible);
   color: var(--cream);
   border-radius: 36px;
   padding: 56px 56px 48px;
@@ -516,7 +535,8 @@ body::before {
   padding: 22px 32px;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
   font-family: var(--mono); font-size: 11px;
-  color: var(--ink-mid);
+  /* Darkened from #786d59 to #5c5243 for 4.5:1+ contrast on --cream (#f5ecd6) */
+  color: #5c5243;
   letter-spacing: 0.08em; text-transform: uppercase;
 }
 .foot .heart { color: var(--rose); }

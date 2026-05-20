@@ -1,0 +1,94 @@
+name: Accessibility Fix
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  fix:
+    if: |
+      github.event.issue.pull_request != null &&
+      (startsWith(github.event.comment.body, '/fix') ||
+       startsWith(github.event.comment.body, '/revert-a11y'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Check write access
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          USERNAME: ${{ github.event.comment.user.login }}
+        run: |
+          PERMISSION=$(gh api "repos/$REPO/collaborators/$USERNAME/permission" --jq .permission)
+          if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
+            echo "User $USERNAME does not have write access."
+            exit 1
+          fi
+
+      - name: Get PR branch
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          BRANCH=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefName --jq .headRefName)
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pr.outputs.branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "a11y-agent[bot]"
+          git config user.email "a11y-agent[bot]@users.noreply.github.com"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Install a11y-agent
+        run: npm install a11y-agent
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Parse command
+        id: cmd
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          if echo "$COMMENT_BODY" | grep -q '^/revert-a11y'; then
+            echo "action=revert" >> $GITHUB_OUTPUT
+            COMMIT=$(echo "$COMMENT_BODY" | grep -oP '(?<=/revert-a11y )\S+' || git log --oneline | grep '\[a11y-agent\]' | head -1 | awk '{print $1}')
+            echo "commit=$COMMIT" >> $GITHUB_OUTPUT
+          else
+            echo "action=fix" >> $GITHUB_OUTPUT
+            CATEGORY=$(echo "$COMMENT_BODY" | grep -oP '(?<=/fix )\S+' || echo "all")
+            echo "category=${CATEGORY:-all}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run fix agent
+        if: steps.cmd.outputs.action == 'fix'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          CATEGORY: ${{ steps.cmd.outputs.category }}
+        run: npx a11y-agent fix --category="$CATEGORY"
+
+      - name: Revert last a11y-agent commit
+        if: steps.cmd.outputs.action == 'revert'
+        env:
+          COMMIT: ${{ steps.cmd.outputs.commit }}
+        run: npx a11y-agent revert --commit="$COMMIT"
