@@ -6,12 +6,12 @@
   --ink-mid: #786d59;
   --paper: #fbf6e8;
 
-  --tangerine: #ef6a2c;
+  --tangerine: #c55a1e;
   --tangerine-2: #f5894c;
   --cobalt: #2351c9;
   --teal: #0f5c5a;
   --butter: #f3cf4e;
-  --rose: #d96676;
+  --rose: #a8334a;
   --moss: #6b8b3f;
 
   --display: "Instrument Serif", Georgia, serif;
@@ -159,7 +159,7 @@ body::before {
   font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.06em;
 }
-.hero .meta-card .k { color: rgba(245,236,214,0.45); display: block; margin-bottom: 4px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
+.hero .meta-card .k { color: rgba(245,236,214,0.65); display: block; margin-bottom: 4px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
 .hero .meta-card .v { font-family: var(--sans); font-size: 14px; letter-spacing: 0; color: var(--cream); font-weight: 500; text-transform: none; }
 .hero .meta-card .v.tan { color: var(--tangerine-2); }
 
@@ -215,7 +215,7 @@ body::before {
 .photo-card .corner {
   position: absolute; top: 14px; right: 14px;
   font-family: var(--display); font-style: italic;
-  font-size: 26px; color: var(--cream); line-height: 1;
+  font-size: 26px; color: var(--ink); line-height: 1;
 }
 
 /* ────────── section heading ────────── */
@@ -379,13 +379,17 @@ body::before {
 @media (max-width: 800px) {
   .exp-card { grid-template-columns: 1fr; gap: 12px; padding: 28px; border-radius: 22px; }
 }
-.exp-card.c1 { background: var(--tangerine); color: var(--cream); }
-.exp-card.c1 .when, .exp-card.c1 .stack-line { color: var(--cream); }
+.exp-card.c1 { background: var(--tangerine); color: var(--ink); }
+.exp-card.c1 .when, .exp-card.c1 .stack-line { color: var(--ink); }
+.exp-card.c1 .title .role { opacity: 1; color: var(--ink-soft); }
 .exp-card.c2 { background: var(--cobalt); color: var(--cream); }
 .exp-card.c2 .when, .exp-card.c2 .stack-line { color: var(--cream); }
+.exp-card.c2 .title .role { opacity: 1; color: #e8eaf6; }
 .exp-card.c3 { background: var(--butter); }
+.exp-card.c3 .when, .exp-card.c3 .stack-line { color: var(--ink-soft); }
 .exp-card.c4 { background: var(--teal); color: var(--cream); }
 .exp-card.c4 .when, .exp-card.c4 .stack-line { color: var(--cream); }
+.exp-card.c4 .title .role { opacity: 1; color: #d4e8d4; }
 
 .exp-card .when {
   font-family: var(--mono); font-size: 11px;
@@ -479,8 +483,9 @@ body::before {
   font-size: clamp(56px, 8vw, 112px);
   line-height: 0.92; font-weight: 400; margin: 0;
   letter-spacing: -0.025em;
+  color: #ffffff;
 }
-.contact-strip h2 em { font-style: italic; }
+.contact-strip h2 em { font-style: italic; color: #ffffff; }
 .contact-strip h2 .amp { font-style: italic; color: var(--butter); }
 .contact-strip .reach {
   display: flex; flex-direction: column; gap: 4px;
@@ -488,18 +493,19 @@ body::before {
 }
 .contact-strip .reach a {
   display: flex; justify-content: space-between; align-items: baseline;
-  text-decoration: none; color: var(--cream);
+  text-decoration: none; color: #ffffff;
   padding: 14px 0;
-  border-top: 1px solid rgba(245,236,214,0.25);
+  border-top: 1px solid rgba(255,255,255,0.35);
   transition: padding 200ms;
   font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.12em; text-transform: uppercase;
 }
-.contact-strip .reach a:last-child { border-bottom: 1px solid rgba(245,236,214,0.25); }
+.contact-strip .reach a:last-child { border-bottom: 1px solid rgba(255,255,255,0.35); }
 .contact-strip .reach a:hover { padding-left: 8px; }
 .contact-strip .reach a .v {
   font-family: var(--display); font-style: italic; font-weight: 400;
   font-size: 22px; text-transform: none; letter-spacing: -0.01em;
+  color: #ffffff;
 }
 
 .contact-strip .splash {
@@ -516,7 +522,7 @@ body::before {
   padding: 22px 32px;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
   font-family: var(--mono); font-size: 11px;
-  color: var(--ink-mid);
+  color: var(--ink-soft);
   letter-spacing: 0.08em; text-transform: uppercase;
 }
 .foot .heart { color: var(--rose); }
